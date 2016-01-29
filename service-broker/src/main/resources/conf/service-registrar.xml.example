@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service-registrar>
+	<register-center>
+		<registry-node>services</registry-node>
+		<url>localhost:2181</url>
+		<session-timeout-ms>5000</session-timeout-ms>
+		<connection-timeout-ms>10000</connection-timeout-ms>
+		<retry-policy policyname="exponentialbackoff" retryTimes="3" baseTimeMS="1000"/>
+	</register-center>
+	<services host="127.0.0.1" port="8080">
+		<service registry-name="demo-service1"  url="/path/to/service1"/>
+		<service registry-name="demo-service2"  url="/path/to/service2"/>
+		<service registry-name="demo-service3"  url="/path/to/service3"/>
+	</services>
+</service-registrar>
